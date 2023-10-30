@@ -1,0 +1,98 @@
+<div class="p-4" style="width: 500px;">
+  <span class="text-3xl w-full flex justify-content-center font-semibold">Inicio de Sesión</span>
+
+  <form [formGroup]="formAuth">
+    <div class="form-group">
+      <span class="p-float-label">
+        <input
+          id="username"
+          formControlName="email"
+          type="text"
+          placeholder="example@email.com"
+          pInputText
+          [class]="validateFormAuth.classValidated('email', 'w-full')"
+        />
+        <label for="username" >Correo<span class="p-error">*</span> </label>
+      </span>
+    
+      <div *ngIf="validateFormAuth.isNotValid('email')">
+        <div
+          class="p-error"
+          *ngIf="validateFormAuth.isNotRuleValid('email', 'required')"
+        >
+          {{ errorInputMessage.required }}
+        </div>
+        <div
+          class="p-error"
+          *ngIf="validateFormAuth.isNotRuleValid('email', 'pattern')"
+        >
+          {{ errorInputMessage.email }}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+
+      <span class="p-float-label">
+        <p-password
+          inputId="password"
+          formControlName="password"
+          type="password"
+          placeholder="**********"
+          inputStyleClass="w-full"
+          [toggleMask]="true"
+          [class]="
+            validateFormAuth.classValidated(
+              'password',
+              'w-full display-grid-important'
+            )
+          "
+        />
+        <label for="password">Password <span class="p-error">*</span></label>
+      </span>
+
+      <div *ngIf="validateFormAuth.isNotValid('password')">
+        <div
+          class="p-error"
+          *ngIf="validateFormAuth.isNotRuleValid('password', 'required')"
+        >
+          {{ errorInputMessage.required }}
+        </div>
+        <div
+          class="p-error"
+          *ngIf="validateFormAuth.isNotRuleValid('password', 'maxlength')"
+        >
+          {{ errorInputMessage.maxLength + "12" }}
+        </div>
+      </div>
+
+    </div>
+
+  
+    
+
+
+  
+    <div class="flex align-items-center justify-content-between mb-4 mt-3">
+      <div class="flex align-items-center">
+        <p-checkbox
+          id="rememberme1"
+          [binary]="true"
+          styleClass="mr-2"
+        ></p-checkbox>
+        <label for="rememberme1" class="text-900">Recordar mi usuario</label>
+      </div>
+      <!-- <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a> -->
+    </div>
+    <div class="w-full">
+      <p-button
+        [loading]="loadSubmit"
+        label="Sign In"
+        icon="pi pi-user"
+        class="w-full display-grid-important login-button"
+        (click)="submit()"
+      ></p-button>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,106 @@
+<div class="flex justify-content-center">
+  <p-dialog
+    header="Nuevo Producto"
+    [(visible)]="visible"
+    [modal]="true"
+    [breakpoints]="{ '1280px': '65vw', '980px': '80vw' }"
+    [style]="{ width: '50vw' }"
+    [closable]="false"
+    [draggable]="false"
+  >
+    <form [formGroup]="formProduct">
+      <div class="form-group">
+        <span class="p-float-label">
+          <input
+            id="nombre"
+            formControlName="nombre"
+            type="text"
+            pInputText
+            [class]="validateFormProduct.classValidated('nombre', 'w-full')"
+          />
+          <label for="nombre">Nombre <span class="p-error">*</span></label>
+        </span>
+        <div *ngIf="validateFormProduct.isNotValid('nombre')">
+          <div
+            class="p-error"
+            *ngIf="validateFormProduct.isNotRuleValid('nombre', 'required')"
+          >
+            {{ errorInputMessage.required }}
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <span class="p-float-label">
+          <input
+            id="descripcion"
+            formControlName="descripcion"
+            type="text"
+            pInputText
+            [class]="
+              validateFormProduct.classValidated('descripcion', 'w-full')
+            "
+          />
+          <label for="descripcion"
+            >Descripción <span class="p-error">*</span></label
+          >
+        </span>
+        <div *ngIf="validateFormProduct.isNotValid('descripcion')">
+          <div
+            class="p-error"
+            *ngIf="
+              validateFormProduct.isNotRuleValid('descripcion', 'required')
+            "
+          >
+            {{ errorInputMessage.required }}
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <span class="p-float-label">
+          <input
+            id="precio"
+            formControlName="precio"
+            type="text"
+            pInputText
+            [class]="validateFormProduct.classValidated('precio', 'w-full')"
+          />
+          <label for="precio">Price <span class="p-error">*</span></label>
+        </span>
+        <div *ngIf="validateFormProduct.isNotValid('precio')">
+          <div
+            class="p-error"
+            *ngIf="validateFormProduct.isNotRuleValid('precio', 'required')"
+          >
+            {{ errorInputMessage.required }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="flex justify-content-between flex-wrap w-full">
+          <div>
+            <p-button
+              label="Guardar"
+              [loading]="loadSubmit"
+              (onClick)="submit()"
+              [disabled]="!formProduct.valid"
+            ></p-button>
+          </div>
+          <div>
+            <p-button
+              label="Limpiar"
+              styleClass="p-button-success"
+              class="mr-2"
+              (onClick)="reset()"
+            ></p-button>
+            <p-button
+              label="Cancelar"
+              styleClass="p-button-danger"
+              (onClick)="cancel()"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </p-dialog>
+</div>

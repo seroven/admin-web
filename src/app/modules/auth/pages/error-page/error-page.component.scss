@@ -1,0 +1,10 @@
+.link-to-panel {
+    color: #3b82f6;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all 0.2s ease-in-out;
+}
+.link-to-panel:hover{
+    color: #1c6ef3;
+    cursor: pointer;
+}

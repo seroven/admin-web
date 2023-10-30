@@ -1,0 +1,163 @@
+
+//Custom classes
+.display-grid-important{
+  display: grid !important; 
+}
+
+.w-full-important{
+  width: 100% !important;
+}
+
+.display-grid-input-button{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.form-group {
+  margin-top: 1.8rem;
+}
+
+.table-container-wrap {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.custom-size-height-small {
+  height: 2.5rem;
+}
+
+.custom-size-width-small {
+  width: 2.5rem;
+}
+
+.custom-font-size-small {
+  font-size: 10px;
+}
+
+
+// Custom color classes
+.border-table-default-color{
+  border-color: #dee2e6;
+}
+
+.border-input-default-color {
+  border-color: #ced4da;
+}
+
+.bg-inputgroup-default-color{
+  background-color: #e9ecef;
+}
+
+.bg-header-table-default-color{
+  background-color: #f8f9fa;
+}
+
+
+// Modifying existing classes in primeng and coreUI
+
+.p-error {
+  margin-top: 4px;
+}
+
+.p-inputtext{
+  padding: 0.5rem 0.5rem;
+  font-size: 13px;
+}
+
+.login-button span {
+  font-size: 14px !important;
+  padding: 0.2rem 0rem !important;
+}
+
+.p-paginator{
+  padding: 0;
+}
+
+.p-fileupload-choose{
+  width: 100%;
+  height: 100%;
+}
+
+.p-fileupload-choose span{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.grid{
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+.p-button{
+  padding: 0.5rem 0.8rem ;
+  font-size: 12px !important;
+}
+
+.p-dialog .p-dialog-header {
+  padding: 1rem 1.5rem;
+}
+
+.p-divider.p-divider-vertical {
+  padding: 0;
+}
+
+.p-float-label label{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+.footer{
+  background-color: #3c4b64;
+  color: white;
+  padding: .75rem;
+}
+
+.dropdown-menu {
+  font-size: 14px;
+}
+
+.dropdown-item:active{
+  background-color: #d7dadd;
+  color: black;
+}
+
+.p-inputwrapper > .p-autocomplete {
+  width: 100% !important;
+}
+
+.p-button.p-button-icon-only {
+  width: 2.1rem;
+  padding: 0.4rem 0;
+}
+
+.p-button.p-button-icon-only span{
+  font-size: 14px;
+}
+
+.p-datatable .p-datatable-header {
+  text-align: center;
+}
+
+.p-dropdown {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+@media (min-width: 1400px){
+  .container-lg{
+    max-width: 1720px !important;
+  }
+}
+
+.p-breadcrumb{
+    border: none;
+}
